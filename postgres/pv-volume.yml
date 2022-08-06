@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: stats-postgres-pv
+  namespace: umami
+  labels:
+    app: postgres
+spec:
+  storageClassName: stats-postgres-pv
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 4Gi
+  hostPath:
+    path: "/mnt/data"

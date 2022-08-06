@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: stats-postgres-pv-claim
+  namespace: umami
+  labels:
+    app: postgres
+spec:
+  storageClassName: stats-postgres-pv
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
